@@ -27,3 +27,11 @@ ul {
 input[type=checkbox] {
     margin-right:10px;
 }
+
+.editText {
+    display:none;
+}
+
+.saveItem {
+    display: none;
+}
