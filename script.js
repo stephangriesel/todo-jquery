@@ -12,25 +12,22 @@ $(document).ready(function() {
     });
 
     function startEditing(event) {
-
-        $(this).parent().find('.todoText');
-
+        var taskLi = $(this).parent();
+        taskLi.find('.todoText');
         var currentText = $(this).parent().find('.todoText').text();
-        $(this).parent().find(".editText").val(currentText);
-        $(this).parent().find(".editText").show();
-        $(this).parent().find(".saveItem").show();
-        $(this).parent().find(".todoText").hide();
+        taskLi.find(".editText").val(currentText);
+        taskLi.find(".editText").show();
+        taskLi.find(".saveItem").show();
+        taskLi.find(".todoText").hide();
     }
 
     function stopEditing(event) {
-        // hide the edit text box
-        // take value from edit text box and place it in our span
-        // show our span
+        var taskLi = $(this).parent();
         $(this).hide();
         var newValue = $(this).parent().find(".editText").val();
-        $(this).parent().find(".editText").hide();
-        $(this).parent().find('.todoText').text(newValue);
-        $(this).parent().find(".todoText").show();
+        taskLi.find(".editText").hide();
+        taskLi.find('.todoText').text(newValue);
+        taskLi.find(".todoText").show();
 
 
     }
@@ -46,10 +43,10 @@ $(document).ready(function() {
     }
 
     function deleteItem() {
-        $(this).parent().remove();
+        taskLi.remove();
     }
 
     function completeItem (){
-        $(this).parent().toggleClass("done");
+        taskLi.toggleClass("done");
     }
 });
